@@ -1,0 +1,26 @@
+{
+  "name": "koa2-deploy-server",
+  "version": "1.0.0",
+  "description": "项目发布后台",
+  "main": "app.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon --harmony ./src/app.js --config nodemonrc.json",
+    "dev:pm2": "NODE_ENV=staging pm2 startOrReload ecosystem.config.js --env staging",
+    "deploy:stag": "NODE_ENV=staging pm2 deploy ecosystem.config.js staging",
+    "deploy:prod": "NODE_ENV=production  pm2 deploy ecosystem.config.js production"
+  },
+  "keywords": [
+    "发布",
+    "记录"
+  ],
+  "author": "yunaichun",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
