@@ -1,0 +1,6 @@
+# 配置参考 - https://juejin.im/post/5ad05a085188257cc20db392
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_size = 2
