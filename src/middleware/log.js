@@ -1,12 +1,11 @@
+const Utils = require('../utils/output');
+
 module.exports = async(ctx, next) => {
   try {
-    console.log(ctx.request);
+    console.log(`method and url is:`, ctx.request.method, ctx.request.url);
     await next();
   } catch (e) {
-    if (typeof e !== 'string') {
-      console.error(e.toString());
-    } else {
-      console.error(e);
-    }
+    const err = typeof e !== 'string' ? e : e.toString();
+    ctx.body = Utils.error(err);
   }
 }
