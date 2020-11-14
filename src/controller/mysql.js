@@ -8,7 +8,7 @@ module.exports = {
     ctx.body = Utils.success({
         data: result
     });
-    next();
+    await next();
   },
   async delete(ctx, next) {
     const sql = 'delete from test where id=1';
@@ -16,7 +16,7 @@ module.exports = {
     ctx.body = Utils.success({
         data: result
     });
-    next();
+    await next();
   },
   async select(ctx, next) {
     // == 获取动态路由参数: ctx.params
@@ -27,7 +27,7 @@ module.exports = {
     ctx.body = Utils.success({
         data: result
     });
-    next();
+    await next();
   },
   async update(ctx, next) {
     const sql = 'update test set username="xiaoli" where id=2';
@@ -35,6 +35,6 @@ module.exports = {
     ctx.body = Utils.success({
         data: result
     });
-    next();
+    await next();
   },
 };

@@ -3,12 +3,14 @@ const path = require('path');
 const static = require('koa-static');
 const router = require('./router');
 const log = require('./middleware/log');
+const cors = require('./middleware/cors');
 
 const app = new Koa();
 
 const staticPath = './static';
 app.use(static(path.join( __dirname,  staticPath)));
 app.use(log);
+app.use(cors);
 app.use(router.routes());
 
 app.listen(3000, () => {
