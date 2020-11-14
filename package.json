@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon --harmony ./src/app.js --config nodemonrc.json",
+    "sql": "NODE_ENV=staging node ./src/db/mysql/exec/index.js",
     "deploy:stag": "NODE_ENV=staging pm2 deploy ecosystem.config.js staging",
     "deploy:prod": "NODE_ENV=production  pm2 deploy ecosystem.config.js production"
   },
