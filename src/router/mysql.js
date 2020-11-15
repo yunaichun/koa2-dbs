@@ -7,5 +7,6 @@ router.post('/insert', Controller.insert);
 router.delete('/delete', Controller.delete);
 router.get('/select', Controller.select);
 router.put('/update', Controller.update);
+router.post('/upload', Controller.upload);
 
 module.exports = router;
