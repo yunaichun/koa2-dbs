@@ -18,7 +18,6 @@ module.exports = {
     return result;
   },
   async destroy(params) {
-    console.log(1111111, params)
     const result = await Model.destroy(params);
     return result;
   },

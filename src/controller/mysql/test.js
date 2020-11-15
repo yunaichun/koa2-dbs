@@ -24,9 +24,26 @@ module.exports = {
     });
     await next();
   },
-  async select(ctx, next) {
-    const params = { where: ctx.request.query };
+  async findAll(ctx, next) {
+    const { page, size } = ctx.request.query;
+    const where = {...ctx.request.query};
+    delete where.page;
+    delete where.size;
+    const params = {
+      where,
+      order: [['id', 'DESC']],
+      offset: Number((page - 1)) * Number(size),
+      limit: Number(size)
+    };
     const result = await Service.findAll(params);
+    ctx.body = Utils.success({
+        data: result
+    });
+    await next();
+  },
+  async findOne(ctx, next) {
+    const params = { where: ctx.request.query };
+    const result = await Service.findOne(params);
     ctx.body = Utils.success({
         data: result
     });
