@@ -29,11 +29,9 @@ class RedisStore extends session.Store {
   }
 
   async destroy(sid) {
-    return await this.redis.del(`SESSISESSION_IDON:${sid}`);
+    return await this.redis.del(`SESSION_ID:${sid}`);
   }
 }
-
-exports.RedisStore = RedisStore;
 
 module.exports = session({
   key: 'SESSION_ID',

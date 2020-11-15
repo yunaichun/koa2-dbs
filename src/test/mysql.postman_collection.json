@@ -144,36 +144,6 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "upload",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "file",
-							"type": "file",
-							"src": []
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:3000/mysql/upload",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"mysql",
-						"upload"
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

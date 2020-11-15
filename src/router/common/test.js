@@ -10,5 +10,6 @@ router.get('/setSessionToMySQL', Controller.setSessionToMySQL);
 router.get('/getSessionFromMySQL', Controller.getSessionFromMySQL);
 router.get('/setSessionToRedis', Controller.setSessionToRedis);
 router.get('/getSessionFromRedis', Controller.getSessionFromRedis);
+router.get('/cacheToRedis/:id', Controller.cacheToRedis);
 
 module.exports = router;

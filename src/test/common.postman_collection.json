@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "0e7adabe-4b9a-4dd0-bb48-266a0825b0a6",
+		"name": "common",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/common/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"common",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCookies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/common/getCookies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"common",
+						"getCookies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setCookies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/common/setCookies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"common",
+						"setCookies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setSessionToMySQL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/common/setSessionToMySQL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"common",
+						"setSessionToMySQL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSessionFromMySQL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/common/getSessionFromMySQL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"common",
+						"getSessionFromMySQL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setSessionToRedis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/common/setSessionToRedis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"common",
+						"setSessionToRedis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSessionFromRedis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/common/getSessionFromRedis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"common",
+						"getSessionFromRedis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cacheToRedis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/common/cacheToRedis/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"common",
+						"cacheToRedis",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

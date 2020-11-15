@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const Utils = require('../../utils/output');
+const redis = require('../../utils/base-redis');
 
 // == 获取动态路由参数: ctx.params
 // == 获取请求头参数: ctx.request.query
@@ -20,6 +21,26 @@ module.exports = {
       data: 'file 上传成功'
     });
     await next();
+  },
+
+  // == cache to redis
+  async cacheToRedis(ctx, next) {
+    const key = `user:${ctx.params.id}`;
+    const user = await redis.get(key);
+    if (!user) {
+      const result = await { user: 'test', age: '1'};
+      // == 查询到值将结果存储下来
+      if (!result) {
+        await redis.set(key, 'null');
+      } else {
+        await redis.set(key, result);
+      }
+      ctx.body = Utils.success({data: result});
+      await next();
+    } else {
+      ctx.body = Utils.success({data: user});
+      await next();
+    }
   },
 
   // == cookie 操作
