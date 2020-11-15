@@ -40,7 +40,7 @@ module.exports = {
     });
     await next();
   },
-  async upload(ctx, next){
+  async upload(ctx, next) {
     const { file } = ctx.request.files;
     const { path: uploadPath, name } = file;
     const readStream = fs.createReadStream(uploadPath);
@@ -50,6 +50,25 @@ module.exports = {
     readStream.pipe(writeStream);
     ctx.body = Utils.success({
       data: '上传成功'
+    });
+    await next();
+  },
+  async cookies(ctx, next) {
+    ctx.cookies.set(
+      'uid', 
+      '123456789',
+      {
+        domain: 'localhost',
+        path: '/',
+        maxAge: 10 * 60 * 1000,
+        expires: new Date('2021-02-15'),
+        httpOnly: true,
+        sameSite: true,
+        overwrite: true,
+      }
+    );
+    ctx.body = Utils.success({
+      data: 'cookie写入成功'
     });
     await next();
   }

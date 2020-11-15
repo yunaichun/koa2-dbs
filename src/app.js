@@ -1,16 +1,16 @@
 const Koa = require('koa');
 const path = require('path');
+const body = require('koa-body');
 const static = require('koa-static');
 const router = require('./router');
 const log = require('./middleware/log');
 const cors = require('./middleware/cors');
-const koaBody = require('koa-body');
 
 const app = new Koa();
 
 app.use(log);
 app.use(cors);
-app.use(koaBody({
+app.use(body({
   multipart: true,
   formidable: {
     maxFileSize: 200*1024*1024
