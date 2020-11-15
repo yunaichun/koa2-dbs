@@ -12,7 +12,7 @@ module.exports = {
     const body = ctx.request.body;
     const result = await Service.create(body);
     ctx.body = Utils.success({
-        data: result
+      data: result
     });
     await next();
   },
@@ -20,24 +20,28 @@ module.exports = {
     const params = { where: { id: ctx.params.id } };
     const result = await Service.destroy(params);
     ctx.body = Utils.success({
-        data: result
+      data: result
     });
     await next();
   },
-  async findAll(ctx, next) {
-    const { page, size } = ctx.request.query;
-    const where = {...ctx.request.query};
-    delete where.page;
-    delete where.size;
+  async findAndCountAll(ctx, next) {
+    let { page, size } = ctx.request.query;
+    size = Number(size);
+    page = Number(page);
+    delete ctx.request.query.page;
+    delete ctx.request.query.size;
     const params = {
-      where,
+      where: ctx.request.query,
       order: [['id', 'DESC']],
-      offset: Number((page - 1)) * Number(size),
-      limit: Number(size)
+      offset: (page - 1) * size,
+      limit: size
     };
-    const result = await Service.findAll(params);
+    const { count, rows } = await Service.findAndCountAll(params);
     ctx.body = Utils.success({
-        data: result
+      data: rows,
+      page,
+      size,
+      count,
     });
     await next();
   },
@@ -45,7 +49,7 @@ module.exports = {
     const params = { where: ctx.request.query };
     const result = await Service.findOne(params);
     ctx.body = Utils.success({
-        data: result
+      data: result
     });
     await next();
   },
@@ -54,7 +58,7 @@ module.exports = {
     const params = { where: { id: ctx.params.id } };
     const result = await Service.update(body, params);
     ctx.body = Utils.success({
-        data: result
+      data: result
     });
     await next();
   },

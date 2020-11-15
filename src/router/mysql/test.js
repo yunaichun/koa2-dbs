@@ -5,7 +5,7 @@ const router = new Router();
 
 router.post('/insert', Controller.insert);
 router.delete('/delete/:id', Controller.delete);
-router.get('/findAll', Controller.findAll);
+router.get('/findAndCountAll', Controller.findAndCountAll);
 router.get('/findOne', Controller.findOne);
 router.put('/update/:id', Controller.update);
 

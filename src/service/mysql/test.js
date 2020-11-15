@@ -1,8 +1,8 @@
 const Model = require('../../model/mysql/test');
 
 module.exports = {
-  async findAll(params) {
-    const result = await Model.findAll(params);
+  async findAndCountAll(params) {
+    const result = await Model.findAndCountAll(params);
     return result;
   },
   async findOne(params) {
