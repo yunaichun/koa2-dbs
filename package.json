@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon --harmony ./src/app.js --config nodemonrc.json",
-    "sql": "NODE_ENV=staging node ./src/db/mysql/exec/index.js",
+    "auto:sql": "NODE_ENV=staging node ./src/db/mysql/auto/index.js",
+    "test:sequelize": "NODE_ENV=staging node ./src/model/mysql/authenticate.js",
     "deploy:stag": "NODE_ENV=staging pm2 deploy ecosystem.config.js staging",
     "deploy:prod": "NODE_ENV=production  pm2 deploy ecosystem.config.js production"
   },
@@ -22,7 +23,9 @@
     "koa-router": "^10.0.0",
     "koa-session-minimal": "^4.0.0",
     "koa-static": "^5.0.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

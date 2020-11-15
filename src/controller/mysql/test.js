@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-const Service = require('../service/mysql');
-const Utils = require('../utils/output');
+const Service = require('../../service/mysql/test');
+const Utils = require('../../utils/output');
 
 // == 获取动态路由参数: ctx.params
 // == 获取请求头参数: ctx.request.query
@@ -9,32 +9,33 @@ const Utils = require('../utils/output');
 // == 获取文件参数: ctx.request.files
 module.exports = {
   async insert(ctx, next) {
-    const sql = 'insert into test(id, username) values(1, "xiaoming")';
-    const result = await Service.insert(sql);
+    const body = ctx.request.body;
+    const result = await Service.create(body);
     ctx.body = Utils.success({
         data: result
     });
     await next();
   },
   async delete(ctx, next) {
-    const sql = 'delete from test where id=1';
-    const result = await Service.delete(sql);
+    const params = { where: { id: ctx.params.id } };
+    const result = await Service.destroy(params);
     ctx.body = Utils.success({
         data: result
     });
     await next();
   },
   async select(ctx, next) {
-    const sql = 'SELECT * FROM test';
-    const result = await Service.select(sql);
+    const params = { where: ctx.request.query };
+    const result = await Service.findAll(params);
     ctx.body = Utils.success({
         data: result
     });
     await next();
   },
   async update(ctx, next) {
-    const sql = 'update test set username="xiaoli" where id=2';
-    const result = await Service.update(sql);
+    const body = ctx.request.body;
+    const params = { where: { id: ctx.params.id } };
+    const result = await Service.update(body, params);
     ctx.body = Utils.success({
         data: result
     });

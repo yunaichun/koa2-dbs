@@ -1,7 +1,7 @@
 const Koa = require('koa');
 const Router = require('koa-router');
 const health = require('./health');
-const mysql = require('./mysql');
+const mysql = require('./mysql/test');
 
 const router = new Router();
 

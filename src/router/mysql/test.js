@@ -1,12 +1,13 @@
 const Router = require('koa-router');
-const Controller = require('../controller/mysql');
+const Controller = require('../../controller/mysql/test');
 
 const router = new Router();
 
 router.post('/insert', Controller.insert);
-router.delete('/delete', Controller.delete);
+router.delete('/delete/:id', Controller.delete);
 router.get('/select', Controller.select);
-router.put('/update', Controller.update);
+router.put('/update/:id', Controller.update);
+
 router.post('/upload', Controller.upload);
 router.get('/setCookies', Controller.setCookies);
 router.get('/getCookies', Controller.getCookies);
