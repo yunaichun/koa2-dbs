@@ -8,6 +8,9 @@ router.delete('/delete', Controller.delete);
 router.get('/select', Controller.select);
 router.put('/update', Controller.update);
 router.post('/upload', Controller.upload);
-router.get('/cookies', Controller.cookies);
+router.get('/setCookies', Controller.setCookies);
+router.get('/getCookies', Controller.getCookies);
+router.get('/setSession', Controller.setSession);
+router.get('/getSession', Controller.getSession);
 
 module.exports = router;

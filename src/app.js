@@ -2,14 +2,17 @@ const Koa = require('koa');
 const path = require('path');
 const body = require('koa-body');
 const static = require('koa-static');
+
 const router = require('./router');
 const log = require('./middleware/log');
 const cors = require('./middleware/cors');
+const session = require('./utils/session');
 
 const app = new Koa();
 
 app.use(log);
 app.use(cors);
+app.use(session);
 app.use(body({
   multipart: true,
   formidable: {
