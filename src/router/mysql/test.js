@@ -5,9 +5,9 @@ const router = new Router();
 
 router.post('/insert', Controller.insert);
 router.delete('/delete/:id', Controller.delete);
-router.get('/findAndCountAll', Controller.findAndCountAll);
-router.get('/findOne', Controller.findOne);
 router.put('/update/:id', Controller.update);
+router.get('/findOne', Controller.findOne);
+router.get('/findAndCountAll', Controller.findAndCountAll);
 
 router.post('/upload', Controller.upload);
 router.get('/setCookies', Controller.setCookies);

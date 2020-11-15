@@ -1,5 +1,5 @@
 
-const MySQLUtil = require('../index');
+const MySQLUtil = require('../mysql/index');
 const { getSqlContentMap, eventLog } = require('./util');
 
 // == 获取所有 sql 脚本内容

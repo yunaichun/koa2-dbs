@@ -10,7 +10,7 @@ const Utils = require('../../utils/output');
 module.exports = {
   async insert(ctx, next) {
     const body = ctx.request.body;
-    const result = await Service.create(body);
+    const result = await Service.insert(body);
     ctx.body = Utils.success({
       data: result
     });
@@ -18,36 +18,7 @@ module.exports = {
   },
   async delete(ctx, next) {
     const params = { where: { id: ctx.params.id } };
-    const result = await Service.destroy(params);
-    ctx.body = Utils.success({
-      data: result
-    });
-    await next();
-  },
-  async findAndCountAll(ctx, next) {
-    let { page, size } = ctx.request.query;
-    size = Number(size);
-    page = Number(page);
-    delete ctx.request.query.page;
-    delete ctx.request.query.size;
-    const params = {
-      where: ctx.request.query,
-      order: [['id', 'DESC']],
-      offset: (page - 1) * size,
-      limit: size
-    };
-    const { count, rows } = await Service.findAndCountAll(params);
-    ctx.body = Utils.success({
-      data: rows,
-      page,
-      size,
-      count,
-    });
-    await next();
-  },
-  async findOne(ctx, next) {
-    const params = { where: ctx.request.query };
-    const result = await Service.findOne(params);
+    const result = await Service.delete(params);
     ctx.body = Utils.success({
       data: result
     });
@@ -62,6 +33,28 @@ module.exports = {
     });
     await next();
   },
+  async findOne(ctx, next) {
+    const params = { where: ctx.request.query };
+    const result = await Service.findOne(params);
+    ctx.body = Utils.success({
+      data: result
+    });
+    await next();
+  },
+  async findAndCountAll(ctx, next) {
+    const params = ctx.request.query;
+    const { page, size } = params;
+    const { count, rows } = await Service.findAndCountAll(params);
+    ctx.body = Utils.success({
+      data: rows,
+      page,
+      size,
+      count,
+    });
+    await next();
+  },
+  
+  // ==============================================
   async upload(ctx, next) {
     const { file } = ctx.request.files;
     const { path: uploadPath, name } = file;
