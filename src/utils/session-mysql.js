@@ -10,8 +10,9 @@ let store = new MysqlSession(config.mysql);
 
 // == 存放 sessionId 的 cookie 配置
 let cookie = {
+  // == 过期时间设置 10 分钟
   maxAge: 10 * 60 * 1000,
-  expires: new Date('2021-02-15'),
+  // expires: new Date('2021-02-15'),
   path: '/',
   domain: '',
   httpOnly: true,

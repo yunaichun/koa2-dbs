@@ -6,13 +6,15 @@ const static = require('koa-static');
 const router = require('./router');
 const log = require('./middleware/log');
 const cors = require('./middleware/cors');
-const session = require('./utils/session');
+const sessionMysql = require('./utils/session-mysql');
+const sessionRedis = require('./utils/session-redis');
 
 const app = new Koa();
 
 app.use(log);
 app.use(cors);
-app.use(session);
+app.use(sessionMysql);
+app.use(sessionRedis);
 app.use(body({
   multipart: true,
   formidable: {

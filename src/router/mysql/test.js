@@ -9,10 +9,4 @@ router.put('/update/:id', Controller.update);
 router.get('/findOne', Controller.findOne);
 router.get('/findAndCountAll', Controller.findAndCountAll);
 
-router.post('/upload', Controller.upload);
-router.get('/setCookies', Controller.setCookies);
-router.get('/getCookies', Controller.getCookies);
-router.get('/setSession', Controller.setSession);
-router.get('/getSession', Controller.getSession);
-
 module.exports = router;

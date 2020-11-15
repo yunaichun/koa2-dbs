@@ -18,11 +18,13 @@
   "author": "yunaichun",
   "license": "ISC",
   "dependencies": {
+    "ioredis": "^4.19.2",
     "koa": "^2.13.0",
     "koa-body": "^4.2.0",
     "koa-mysql-session": "0.0.2",
     "koa-router": "^10.0.0",
     "koa-session-minimal": "^4.0.0",
+    "koa-session2": "^2.2.10",
     "koa-static": "^5.0.0",
     "mongoose": "^5.10.14",
     "mysql": "^2.18.1",

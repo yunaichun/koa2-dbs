@@ -4,7 +4,7 @@ Koa2 项目模版
 
 - MySQL 数据存储
 - MongoDB 数据存储
-- Redis 缓存
+- Redis 数据缓存
 - pm2 自动发布到阿里 ECS
 
 
