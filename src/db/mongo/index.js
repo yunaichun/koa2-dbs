@@ -3,7 +3,10 @@ const config = require('../../config');
 
 const { host, user, password, port, database } = config.mongo;
 
-mongoose.connect(`mongodb://${user}:${password}@${host}:${port}/${database}`, err => {
+mongoose.connect(`mongodb://${user}:${password}@${host}:${port}/${database}`, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+}, err => {
 	if (err) {
 		console.log('connect database error -->', err);
 		process.exit(1);
