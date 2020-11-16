@@ -8,6 +8,12 @@ const sequelize = new Sequelize(database, user, password, {
   dialect: 'mysql',
 });
 
+sequelize.authenticate().then(() => {
+  console.log('connect mysql success.');
+}).catch(err => {
+  console.error('connect mysql error -->', err);
+});
+
 module.exports = {
   Sequelize,
   sequelize

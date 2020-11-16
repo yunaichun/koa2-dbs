@@ -1,7 +1,8 @@
 const { mongoose } = require('./index');
 
 const Schema = mongoose.Schema;
-const ObjectId = mongoose.Types.ObjectId;
+// const ObjectId = Schema.Types.ObjectId;
+// movies: [{ type: ObjectId, ref: 'test2' }],
 
 module.exports = mongoose.model('test', new Schema({
   username: {
