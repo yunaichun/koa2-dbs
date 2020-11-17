@@ -6,8 +6,8 @@ const static = require('koa-static');
 const router = require('./router');
 const log = require('./middleware/log');
 const cors = require('./middleware/cors');
-const sessionMysql = require('./utils/session-mysql');
-const sessionRedis = require('./utils/session-redis');
+const sessionMysql = require('./middleware/session/mysql');
+const sessionRedis = require('./middleware/session/redis');
 
 const app = new Koa();
 

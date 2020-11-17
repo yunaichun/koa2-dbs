@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const Utils = require('../../utils/output');
-const redis = require('../../utils/base-redis');
+const redisImpl = require('../../utils/redisImpl');
 
 // == 获取动态路由参数: ctx.params
 // == 获取请求头参数: ctx.request.query
@@ -31,9 +31,9 @@ module.exports = {
       const result = await { user: 'test', age: '1'};
       // == 查询到值将结果存储下来
       if (!result) {
-        await redis.set(key, 'null');
+        await redisImpl.set(key, 'null');
       } else {
-        await redis.set(key, result);
+        await redisImpl.set(key, result);
       }
       ctx.body = Utils.success({data: result});
       await next();

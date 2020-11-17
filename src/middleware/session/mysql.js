@@ -3,7 +3,7 @@ const session = require('koa-session-minimal');
 // == 为 koa-session-minimal 中间件提供 MySQL 数据库的 session 数据读写操作。将 sessionId 和对应的数据存到数据库
 const MysqlSession = require('koa-mysql-session');
 
-const config = require('../config');
+const config = require('../../config');
 
 // == 配置存储 session 信息的 mysql
 let store = new MysqlSession(config.mysql);

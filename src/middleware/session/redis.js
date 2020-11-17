@@ -1,6 +1,6 @@
 const session = require('koa-session2');
 const Redis = require('ioredis');
-const config = require('../config');
+const config = require('../../config');
 
 class RedisStore extends session.Store {
   constructor() {

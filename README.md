@@ -12,22 +12,25 @@ Koa2 项目模版
 
 ```sh
 # 本地开发
-$ run run dev
+$ npm run dev
 
 # 数据库脚本
-$ run run auto:sql
+$ npm run auto:sql
 
-# 检测 MySQL 连接成功
-$ run run test:sequelize
+# 检测 MySQL 连接是否成功
+$ npm run test:sequelize
 
-# 检测 MongoDB 连接成功
-$ run run test:mongoose
+# 检测 MongoDB 连接是否成功
+$ npm run test:mongoose
+
+# 检测 Redis 连接是否成功
+$ npm run test:ioredis
 
 # pm2 测试环境发布
-$ run run deploy:stag
+$ npm run deploy:stag
 
 # pm2 正式环境发布
-$ run run deploy:prod
+$ npm run deploy:prod
 ```
 
 
@@ -44,7 +47,7 @@ $ run run deploy:prod
     |-- router                路由层
     |-- db                    数据库脚本等
     |-- static                静态服务目录
-    |-- middleware            自定义中间件
-    |-- utils                 全局通用方法
-    |-- test                  备用文档等
+    |-- middleware            中间件
+    |-- utils                 通用方法
+    |-- test                  测试文件等
 ```
