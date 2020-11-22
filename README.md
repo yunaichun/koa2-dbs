@@ -1,10 +1,11 @@
 # 简介
 
-Koa2 项目模版
+基于 Koa2 搭建的后台项目模版, 包含:
 
-- MySQL 数据存储
-- MongoDB 数据存储
-- Redis 数据缓存
+- MySQL 数据增删查改
+- MongoDB 数据增删查改
+- Redis 数据存储
+- 上传、cookie、session
 - pm2 自动发布到阿里 ECS
 
 

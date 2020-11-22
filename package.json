@@ -1,7 +1,7 @@
 {
-  "name": "koa2-deploy-server",
+  "name": "koa2-dbs",
   "version": "1.0.0",
-  "description": "项目发布后台",
+  "description": "基于 Koa2 搭建的后台项目模版",
   "main": "app.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon --harmony ./src/app.js --config nodemonrc.json",
@@ -13,8 +13,11 @@
     "deploy:prod": "NODE_ENV=production  pm2 deploy ecosystem.config.js production"
   },
   "keywords": [
-    "发布",
-    "记录"
+    "koa2",
+    "MySQL",
+    "MongoDB",
+    "Redis",
+    "pm2"
   ],
   "author": "yunaichun",
   "license": "ISC",
