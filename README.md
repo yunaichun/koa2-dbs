@@ -52,3 +52,7 @@ $ npm run deploy:prod
     |-- utils                 通用方法
     |-- test                  测试文件等
 ```
+
+## API 文档
+
+- [接口文档](./API.md)
