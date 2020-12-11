@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const config = require('../../config');
 
-const { host, port, database } = config.mongo;
+const { user, password, host, port, database } = config.mongo;
 
-mongoose.connect(`mongodb://${host}:${port}/${database}`, {
+mongoose.connect(`mongodb://${user}:${password}@${host}:${port}/${database}`, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 }, err => {
