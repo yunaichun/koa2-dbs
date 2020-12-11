@@ -17,17 +17,38 @@
 							"key": "username",
 							"value": "test",
 							"type": "text"
+						},
+						{
+							"key": "brother",
+							"value": "aaa",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "birthday",
+							"value": "2018-12-01",
+							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/mysql/insert",
+					"raw": "http://localhost:3000/v1/mysql/insert",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mysql",
 						"insert"
 					]
@@ -41,16 +62,17 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/mysql/delete/6",
+					"raw": "http://localhost:3000/v1/mysql/delete/14",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mysql",
 						"delete",
-						"6"
+						"14"
 					]
 				},
 				"description": "select"
@@ -73,13 +95,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/mysql/update/1",
+					"raw": "http://localhost:3000/v1/mysql/update/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mysql",
 						"update",
 						"1"
@@ -94,13 +117,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/mysql/findOne?id=2",
+					"raw": "http://localhost:3000/v1/mysql/findOne?id=2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mysql",
 						"findOne"
 					],
@@ -121,13 +145,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/mysql/findAndCountAll?page=2&size=2",
+					"raw": "http://localhost:3000/v1/mysql/findAndCountAll?page=2&size=2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mysql",
 						"findAndCountAll"
 					],

@@ -16,18 +16,19 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": []
+							"src": "/Users/yunaichun/Downloads/test.txt"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/common/upload",
+					"raw": "http://localhost:3000/v1/common/upload",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"common",
 						"upload"
 					]
@@ -54,13 +55,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/common/getCookies",
+					"raw": "http://localhost:3000/v1/common/getCookies",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"common",
 						"getCookies"
 					]
@@ -74,13 +76,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/common/setCookies",
+					"raw": "http://localhost:3000/v1/common/setCookies",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"common",
 						"setCookies"
 					]
@@ -94,13 +97,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/common/setSessionToMySQL",
+					"raw": "http://localhost:3000/v1/common/setSessionToMySQL",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"common",
 						"setSessionToMySQL"
 					]
@@ -114,13 +118,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/common/getSessionFromMySQL",
+					"raw": "http://localhost:3000/v1/common/getSessionFromMySQL",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"common",
 						"getSessionFromMySQL"
 					]
@@ -134,13 +139,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/common/setSessionToRedis",
+					"raw": "http://localhost:3000/v1/common/setSessionToRedis",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"common",
 						"setSessionToRedis"
 					]
@@ -154,13 +160,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/common/getSessionFromRedis",
+					"raw": "http://localhost:3000/v1/common/getSessionFromRedis",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"common",
 						"getSessionFromRedis"
 					]
@@ -174,13 +181,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/common/cacheToRedis/1234",
+					"raw": "http://localhost:3000/v1/common/cacheToRedis/1234",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"common",
 						"cacheToRedis",
 						"1234"

@@ -11,34 +11,26 @@ module.exports = {
   async insert(ctx, next) {
     const body = ctx.request.body;
     const result = await Service.insert(body);
-    ctx.body = Utils.success({
-      data: result
-    });
+    ctx.body = Utils.success(result);
     await next();
   },
   async delete(ctx, next) {
     const params = { where: { id: ctx.params.id } };
     const result = await Service.delete(params);
-    ctx.body = Utils.success({
-      data: result
-    });
+    ctx.body = Utils.success(result);
     await next();
   },
   async update(ctx, next) {
     const body = ctx.request.body;
     const params = { where: { id: ctx.params.id } };
     const result = await Service.update(body, params);
-    ctx.body = Utils.success({
-      data: result
-    });
+    ctx.body = Utils.success(result);
     await next();
   },
   async findOne(ctx, next) {
     const params = { where: ctx.request.query };
     const result = await Service.findOne(params);
-    ctx.body = Utils.success({
-      data: result
-    });
+    ctx.body = Utils.success(result);
     await next();
   },
   async findAndCountAll(ctx, next) {

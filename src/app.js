@@ -6,15 +6,16 @@ const static = require('koa-static');
 const router = require('./router');
 const log = require('./middleware/log');
 const cors = require('./middleware/cors');
-const sessionMysql = require('./middleware/session/mysql');
+// == 以下2个中间件只能取一个
 const sessionRedis = require('./middleware/session/redis');
+const sessionMysql = require('./middleware/session/mysql');
 
 const app = new Koa();
 
 app.use(log);
 app.use(cors);
-app.use(sessionMysql);
 app.use(sessionRedis);
+app.use(sessionMysql);
 app.use(body({
   multipart: true,
   formidable: {

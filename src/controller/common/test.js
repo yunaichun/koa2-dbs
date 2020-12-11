@@ -14,19 +14,18 @@ module.exports = {
     const { path: uploadPath, name } = file;
     const readStream = fs.createReadStream(uploadPath);
     const ext = name.split('.').pop();
-    const newPath = path.join(__dirname,  `../static/${Date.now()}.${ext}`);
+    const newPath = path.join(__dirname,  `../../static/${Date.now()}.${ext}`);
     const writeStream = fs.createWriteStream(newPath);
     readStream.pipe(writeStream);
-    ctx.body = Utils.success({
-      data: 'file 上传成功'
-    });
+    ctx.body = Utils.success('file 上传成功');
     await next();
   },
 
   // == cache to redis
   async cacheToRedis(ctx, next) {
     const key = `user:${ctx.params.id}`;
-    const user = await redis.get(key);
+    const user = await redisImpl.get(key);
+    console.log('redis user value is:', user);
     if (!user) {
       const result = await { user: 'test', age: '1'};
       // == 查询到值将结果存储下来
@@ -35,10 +34,10 @@ module.exports = {
       } else {
         await redisImpl.set(key, result);
       }
-      ctx.body = Utils.success({data: result});
+      ctx.body = Utils.success(result);
       await next();
     } else {
-      ctx.body = Utils.success({data: user});
+      ctx.body = Utils.success(user);
       await next();
     }
   },
@@ -58,15 +57,11 @@ module.exports = {
         overwrite: true,
       }
     );
-    ctx.body = Utils.success({
-      data: 'cookies 写入成功'
-    });
+    ctx.body = Utils.success('cookies 写入成功');
     await next();
   },
   async getCookies(ctx, next) {
-    ctx.body = Utils.success({
-      data: `cookies 读取成功: ${ctx.cookies.get('uid')}`
-    });
+    ctx.body = Utils.success(`cookies 读取成功: ${ctx.cookies.get('uid')}`);
     await next();
   },
 
@@ -76,18 +71,14 @@ module.exports = {
       user_id: Math.random().toString(36).substr(2),
       count: 0
     };
-    ctx.body = Utils.success({
-      data: ctx.session
-    });
+    ctx.body = Utils.success(ctx.session);
     await next();
   },
   async getSessionFromMySQL(ctx, next) {
     ctx.session.count = ctx.session.count + 1;
     // == session 被存储在 _mysql_session_store 表中
     // == ctx.session 等价于 select data from  where id=`SESSION_ID:${ctx.cookies.get('SESSION_ID')}`;
-    ctx.body = Utils.success({
-      data: ctx.session
-    });
+    ctx.body = Utils.success(ctx.session);
     await next();
   },
 
@@ -97,18 +88,14 @@ module.exports = {
       user_id: Math.random().toString(36).substr(2),
       count: 0
     };
-    ctx.body = Utils.success({
-      data: ctx.session
-    });
+    ctx.body = Utils.success(ctx.session);
     await next();
   },
   async getSessionFromRedis(ctx, next) {
     ctx.session.count = ctx.session.count + 1;
     // == session 被存储在 _mysql_session_store 表中
     // == ctx.session 等价于 select data from  where id=`SESSION_ID:${ctx.cookies.get('SESSION_ID')}`;
-    ctx.body = Utils.success({
-      data: ctx.session
-    });
+    ctx.body = Utils.success(ctx.session);
     await next();
   }
 };

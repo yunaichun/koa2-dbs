@@ -7,9 +7,9 @@ const common = require('./common/test');
 
 const router = new Router();
 
-router.use('/health', health.routes(), health.allowedMethods());
-router.use('/mysql', mysql.routes(), mysql.allowedMethods());
-router.use('/mongo', mongo.routes(), mongo.allowedMethods());
-router.use('/common', common.routes(), common.allowedMethods());
+router.use('/v1/health', health.routes(), health.allowedMethods());
+router.use('/v1/mysql', mysql.routes(), mysql.allowedMethods());
+router.use('/v1/mongo', mongo.routes(), mongo.allowedMethods());
+router.use('/v1/common', common.routes(), common.allowedMethods());
 
 module.exports = router;
