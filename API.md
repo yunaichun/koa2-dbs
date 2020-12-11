@@ -190,7 +190,7 @@ axios.delete('http://www.answera.top/v1/mysql/delete/14')
 
 **举例**
 ```text
-axios.delete('http://www.answera.top/v1/mysql/update/14', {
+axios.put('http://www.answera.top/v1/mysql/update/14', {
   username: '22'
 }).then((res) => {
   console.log(res.data);
@@ -275,7 +275,7 @@ axios.delete('http://www.answera.top/v1/mongo/delete/14')
 
 **举例**
 ```text
-axios.delete('http://www.answera.top/v1/mongo/update/14', {
+axios.put('http://www.answera.top/v1/mongo/update/14', {
   username: '22'
 }).then((res) => {
   console.log(res.data);
