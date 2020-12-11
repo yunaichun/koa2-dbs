@@ -41,13 +41,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/mongo/insert",
+					"raw": "http://localhost:3000/v1/mongo/insert",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mongo",
 						"insert"
 					]
@@ -61,13 +62,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/mongo/remove/5fb1396074663c41d15b0bf6",
+					"raw": "http://localhost:3000/v1/mongo/remove/5fb1396074663c41d15b0bf6",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mongo",
 						"remove",
 						"5fb1396074663c41d15b0bf6"
@@ -92,13 +94,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/mongo/update/5fb13ac19bf334447cdc0fa3",
+					"raw": "http://localhost:3000/v1/mongo/update/5fb13ac19bf334447cdc0fa3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mongo",
 						"update",
 						"5fb13ac19bf334447cdc0fa3"
@@ -113,13 +116,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/mongo/findOne?_id=5fb13ac19bf334447cdc0fa3",
+					"raw": "http://localhost:3000/v1/mongo/findOne?_id=5fb13ac19bf334447cdc0fa3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mongo",
 						"findOne"
 					],
@@ -139,13 +143,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/mongo/findAndCountAll?page=2&size=2",
+					"raw": "http://localhost:3000/v1/mongo/findAndCountAll?page=2&size=2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"v1",
 						"mongo",
 						"findAndCountAll"
 					],
