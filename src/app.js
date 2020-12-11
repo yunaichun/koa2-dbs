@@ -22,6 +22,7 @@ app.use(body({
     maxFileSize: 200*1024*1024
   }
 }));
+// == 可通过访问文件: http://localhost:3000/1607667438606.txt
 app.use(static(path.join(__dirname,  './static')));
 app.use(router.routes());
 
