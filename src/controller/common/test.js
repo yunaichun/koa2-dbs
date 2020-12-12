@@ -48,7 +48,7 @@ module.exports = {
       'uid', 
       '123456789',
       {
-        domain: 'localhost',
+        domain: '',
         path: '/',
         maxAge: 10 * 60 * 1000,
         expires: new Date('2021-02-15'),
