@@ -55,7 +55,7 @@ $ npm run deploy:prod
 
 - [接口文档](./API.md)
 
-## 总结笔记地址
+## 总结笔记
 
 - [redis 存储 session](https://www.answera.top/backend/redis/session/)
 - [redis 缓存请求](https://www.answera.top/backend/redis/impl/)
