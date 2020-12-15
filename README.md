@@ -8,7 +8,6 @@
 - 上传、cookie、session
 - pm2 自动发布到阿里 ECS
 
-
 ## 说明文档
 
 ```sh
@@ -34,7 +33,6 @@ $ npm run deploy:stag
 $ npm run deploy:prod
 ```
 
-
 ### 项目结构
 
 ```bash
@@ -56,3 +54,10 @@ $ npm run deploy:prod
 ## API 文档
 
 - [接口文档](./API.md)
+
+## 总结笔记地址
+
+- [redis 存储 session](https://www.answera.top/backend/redis/session/)
+- [redis 缓存请求](https://www.answera.top/backend/redis/impl/)
+- [MySQL 文档对象模型 Sequelize 在 koa2 中的使用](https://www.answera.top/backend/mysql/orm/)
+- [MongoDB 文档对象模型 Mongoose 在 koa2 中的使用](https://www.answera.top/backend/mongo/orm/)
