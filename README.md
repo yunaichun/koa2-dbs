@@ -1,4 +1,4 @@
-# 简介
+## 简介
 
 基于 Koa2 搭建的后台项目模版, 包含:
 
@@ -8,7 +8,7 @@
 - 上传、cookie、session
 - pm2 自动发布到阿里 ECS
 
-## 说明文档
+## 项目启动
 
 ```sh
 # 本地开发
@@ -33,7 +33,7 @@ $ npm run deploy:stag
 $ npm run deploy:prod
 ```
 
-### 目录结构
+## 目录结构
 
 ```bash
 # 每个目录下分为 mongo、mysql 两类
