@@ -55,9 +55,9 @@ $ npm run deploy:prod
 
 - [接口文档](./API.md)
 
-## 总结笔记
+## 学习笔记
 
-- [redis 存储 session](https://www.answera.top/backend/redis/session/)
-- [redis 缓存请求](https://www.answera.top/backend/redis/impl/)
-- [MySQL 文档对象模型 Sequelize 在 koa2 中的使用](https://www.answera.top/backend/mysql/orm/)
-- [MongoDB 文档对象模型 Mongoose 在 koa2 中的使用](https://www.answera.top/backend/mongo/orm/)
+- Redis 存储 session: https://www.answera.top/backend/redis/session
+- Redis 缓存请求: https://www.answera.top/backend/redis/impl
+- MySQL 文档对象模型 Sequelize 在 koa2 中的使用: https://www.answera.top/backend/mysql/orm
+- MongoDB 文档对象模型 Mongoose 在 koa2 中的使用: https://www.answera.top/backend/mongo/orm
