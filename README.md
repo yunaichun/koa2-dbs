@@ -33,7 +33,7 @@ $ npm run deploy:stag
 $ npm run deploy:prod
 ```
 
-### 项目结构
+### 目录结构
 
 ```bash
 # 每个目录下分为 mongo、mysql 两类
