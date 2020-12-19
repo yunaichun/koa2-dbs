@@ -4,7 +4,7 @@
 
 - MySQL 数据增删查改
 - MongoDB 数据增删查改
-- Redis 数据存储
+- Redis 数据缓存
 - 上传、cookie、session
 - pm2 自动发布到阿里 ECS
 
