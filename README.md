@@ -36,8 +36,6 @@ $ npm run deploy:prod
 ## 目录结构
 
 ```
-model、service、controller、router目录下分为 mongo、mysql 两类
-
 └── src            
     ├── app.js                入口文件         
     ├── config                配置文件
@@ -59,7 +57,7 @@ model、service、controller、router目录下分为 mongo、mysql 两类
         ├── health.js         健康检查路由
         └── index.js          入口路由
     ├── controller            控制层
-        ├── common            Koa2 基本操作接口: 上传、cookie、session
+        ├── common            Koa2 基本操作逻辑: 上传、cookie、session
         ├── mongo             MongoDB 增删查改逻辑
         └── mysql             MySQL 增删查改逻辑
     ├── middleware            中间件
