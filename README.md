@@ -44,7 +44,7 @@ model、service、controller、router目录下分为 mongo、mysql 两类
         ├── base.js           三个环境相同的配置（隐私配置）
         ├── dev.js            开发环境配置         
         ├── stag.js           stag环境配置
-        └── prod.js           正式环境配置
+        ├── prod.js           正式环境配置
         └── index.js          配置入口
     ├── model                 实体层
         ├── mongo             mongoose ORM
