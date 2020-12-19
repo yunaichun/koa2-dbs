@@ -35,20 +35,45 @@ $ npm run deploy:prod
 
 ## 目录结构
 
-```bash
-# 每个目录下分为 mongo、mysql 两类
-|-- src            
-    |-- app.js                入口文件         
-    |-- config                配置文件
-    |-- model                 实体层  
-    |-- service               接口层
-    |-- controller            逻辑层
-    |-- router                路由层
-    |-- db                    数据库脚本等
-    |-- static                静态服务目录
-    |-- middleware            中间件
-    |-- utils                 通用方法
-    |-- test                  测试文件等
+```
+model、service、controller、router目录下分为 mongo、mysql 两类
+
+└── src            
+    ├── app.js                入口文件         
+    ├── config                配置文件
+        ├── base.js           三个环境相同的配置（隐私配置）
+        ├── dev.js            开发环境配置         
+        ├── stag.js           stag环境配置
+        └── prod.js           正式环境配置
+        └── index.js          配置入口
+    ├── model                 实体层
+        ├── mongo             mongoose ORM
+        └── mysql             sequelize ORM
+    ├── service               接口层
+        ├── mongo             mongoose 增删查改接口
+        └── mysql             sequelize 增删查改接口
+    ├── router                路由层
+        ├── common            Koa2 基本操作接口: 上传、cookie、session
+        ├── mongo             MongoDB 增删查改路由
+        ├── mysql             MySQL 增删查改路由
+        ├── health.js         健康检查路由
+        └── index.js          入口路由
+    ├── controller            控制层
+        ├── common            Koa2 基本操作接口: 上传、cookie、session
+        ├── mongo             MongoDB 增删查改逻辑
+        └── mysql             MySQL 增删查改逻辑
+    ├── middleware            中间件
+        ├── session           Koa2 中 session 存储到 MySQL 和 Redis 中间件
+        ├── cors.js           跨域中间间
+        └── log.js            日志中间件
+    ├── utils                 通用方法
+        ├── redisImpl.js      redis 数据缓存封装
+        └── output.js         接口数据统一输出封装
+    ├── test                  测试文件等
+        ├── authenticate      验证 MongoDB、MySQL、Redis 是否可以正常连接
+        └── postman           接口 postman 测试导出文件
+    ├── db                    数据库文件和自动执行脚本等
+    └── static                静态服务目录
 ```
 
 ## API 文档
