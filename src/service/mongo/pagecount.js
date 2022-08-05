@@ -9,6 +9,7 @@ module.exports = {
       await Model.update(params, { count: count + 1 }, { multi: true });
     } else {
       if (!params.url) throw Error('url is required');
+      if (url.indexOf('answera.top') === -1) throw Error('only count answera.top site');
       const newModal = new Model({ ...params, count: 1 });
       await newModal.save();
     }
